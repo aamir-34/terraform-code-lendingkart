@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: lk-terraform
+  description: Terraform stacks used to deploy GCP infrastructure
+  links:
+    - url: https://lendingkart.atlassian.net/wiki/spaces/SWPRJ/pages/122030/Tech+Team # todo: add project confluence page url here
+      title: Confluence
+      icon: docs
+  tags:
+    - default
+spec:
+  type: scripts
+  lifecycle: experimental # todo: change lifecycle to production once the project is live
+  system: LendingkartTech
+  owner: user:manik-dham

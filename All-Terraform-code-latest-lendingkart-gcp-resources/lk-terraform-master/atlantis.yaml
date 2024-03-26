@@ -1,0 +1,3711 @@
+---
+projects:
+################ Prod Account dir workflow ##########
+#Needs to be enabled when this stack is deployed/resource imported
+  - dir: account/prod/core_infra/google_project_service
+    name: prod_core_infra_google_project_service
+    workflow: prod_core_infra_google_project_service
+  - dir: account/prod/core_infra/vpc
+    name: prod_core_infra_vpc
+    workflow: prod_core_infra_vpc
+  - dir: account/prod/core_infra/subnets
+    name: prod_core_infra_subnets
+    workflow: prod_core_infra_subnets
+  - dir: account/prod/core_infra/cloudnat
+    name: prod_core_infra_cloudnat
+    workflow: prod_core_infra_cloudnat
+  - dir: account/prod/core_infra/firewall_policy
+    name: prod_core_infra_firewall_policy
+    workflow: prod_core_infra_firewall_policy
+  - dir: account/prod/core_infra/kms
+    name: prod_core_infra_kms
+    workflow: prod_core_infra_kms
+  - dir: account/prod/core_infra/gke_cluster
+    name: prod_core_infra_gke_cluster
+    workflow: prod_core_infra_gke_cluster
+  - dir: account/prod/core_infra/gke_node_pools
+    name: prod_core_infra_gke_node_pools
+    workflow: prod_core_infra_gke_node_pools
+  - dir: account/prod/core_infra/gcp_managed_sa
+    name: prod_core_infra_gcp_managed_sa
+    workflow: prod_core_infra_gcp_managed_sa
+  - dir: account/prod/core_infra/sa/gke
+    name: prod_core_infra_sa_gke
+    workflow: prod_core_infra_sa_gke
+  - dir: account/prod/core_infra/istio_pvt_lb
+    name: prod_core_infra_istio_pvt_lb
+    workflow: prod_core_infra_istio_pvt_lb
+  - dir: account/prod/core_infra/istio_pub_lb
+    name: prod_core_infra_istio_pub_lb
+    workflow: prod_core_infra_istio_pub_lb
+  - dir: account/prod/core_infra/pvt_svc_connection
+    name: prod_core_infra_pvt_svc_connection
+    workflow: prod_core_infra_pvt_svc_connection
+  - dir: account/prod/core_infra/vpn/gcp_prod_aws_prod_01/gateway
+    name: prod_core_infra_vpn_gcp_prod_aws_prod_01_gateway
+    workflow: prod_core_infra_vpn_gcp_prod_aws_prod_01_gateway
+  - dir: account/prod/core_infra/vpn/gcp_prod_aws_prod_01/tunnel_peer_gateway
+    name: prod_core_infra_vpn_gcp_prod_aws_prod_01_tunnel_peer_gateway
+    workflow: prod_core_infra_vpn_gcp_prod_aws_prod_01_tunnel_peer_gateway
+  - dir: account/prod/core_infra/vpn/gcp_prod_aws_prod_02/gateway
+    name: prod_core_infra_vpn_gcp_prod_aws_prod_02_gateway
+    workflow: prod_core_infra_vpn_gcp_prod_aws_prod_02_gateway
+  - dir: account/prod/core_infra/vpn/gcp_prod_aws_prod_02/tunnel_peer_gateway
+    name: prod_core_infra_vpn_gcp_prod_aws_prod_02_tunnel_peer_gateway
+    workflow: prod_core_infra_vpn_gcp_prod_aws_prod_02_tunnel_peer_gateway
+  - dir: account/prod/core_infra/gke_bkp_plan
+    name: prod_core_infra_gke_bkp_plan
+    workflow: prod_core_infra_gke_bkp_plan
+  - dir: account/prod/core_infra/gke_restore_plan
+    name: prod_core_infra_gke_restore_plan
+    workflow: prod_core_infra_gke_restore_plan
+  - dir: account/prod/vault_common_role
+    name: prod_vault_common_role
+    workflow: prod_vault_common_role
+  - dir: account/prod/loki
+    name: prod_loki
+    workflow: prod_loki
+  - dir: account/prod/mimir
+    name: prod_mimir
+    workflow: prod_mimir
+  - dir: account/prod/prometheus
+    name: prod_prometheus
+    workflow: prod_prometheus
+  - dir: account/prod/cn-kyc-consumer
+    name: prod_cn-kyc-consumer
+    workflow: prod_cn-kyc-consumer
+  - dir: account/prod/digitalsignapi
+    name: prod_digitalsignapi
+    workflow: prod_digitalsignapi
+  - dir: account/prod/fiserviceapi
+    name: prod_fiserviceapi
+    workflow: prod_fiserviceapi
+  - dir: account/prod/fiservice-int
+    name: prod_fiservice-int
+    workflow: prod_fiservice-int
+  - dir: account/prod/arsenal-int
+    name: prod_arsenal-int
+    workflow: prod_arsenal-int
+  - dir: account/prod/cibil-change-consumer
+    name: prod_cibil-change-consumer
+    workflow: prod_cibil-change-consumer
+  - dir: account/prod/jaguarapi
+    name: prod_jaguarapi
+    workflow: prod_jaguarapi
+  - dir: account/prod/arsenalapi
+    name: prod_arsenalapi
+    workflow: prod_arsenalapi
+  - dir: account/prod/ectapi
+    name: prod_ectapi
+    workflow: prod_ectapi
+  - dir: account/prod/auditapi
+    name: prod_auditapi
+    workflow: prod_auditapi
+  - dir: account/prod/quadra-int
+    name: prod_quadra-int
+    workflow: prod_quadra-int
+  - dir: account/prod/enach-int
+    name: prod_enach-int
+    workflow: prod_enach-int
+  - dir: account/prod/enach-scheduler
+    name: prod_enach-scheduler
+    workflow: prod_enach-scheduler
+  - dir: account/prod/enach-consumer
+    name: prod_enach-consumer
+    workflow: prod_enach-consumer
+  - dir: account/prod/enachapi
+    name: prod_enachapi
+    workflow: prod_enachapi
+  - dir: account/prod/kycapi
+    name: prod_kycapi
+    workflow: prod_kycapi
+  - dir: account/prod/kyc-int
+    name: prod_kyc-int
+    workflow: prod_kyc-int
+  - dir: account/prod/kyc-scheduler
+    name: prod_kyc-scheduler
+    workflow: prod_kyc-scheduler
+  - dir: account/prod/kyc-consumer
+    name: prod_kyc-consumer
+    workflow: prod_kyc-consumer
+  - dir: account/prod/lgnd-schedular
+    name: prod_lgnd-schedular
+    workflow: prod_lgnd-schedular
+  - dir: account/prod/cn-scheduler
+    name: prod_cn-scheduler
+    workflow: prod_cn-scheduler
+  - dir: account/prod/cn-cis-lfl-consumer
+    name: prod_cn-cis-lfl-consumer
+    workflow: prod_cn-cis-lfl-consumer
+  - dir: account/prod/rmsapi
+    name: prod_rmsapi
+    workflow: prod_rmsapi
+  - dir: account/prod/collect10api
+    name: prod_collect10api
+    workflow: prod_collect10api
+  - dir: account/prod/auxiliaryapi
+    name: prod_auxiliaryapi
+    workflow: prod_auxiliaryapi
+  - dir: account/prod/tnc-consumer
+    name: prod_tnc-consumer
+    workflow: prod_tnc-consumer
+  - dir: account/prod/ad-cdc-consumer
+    name: prod_ad-cdc-consumer
+    workflow: prod_ad-cdc-consumer
+  - dir: account/prod/ect-cdc-consumer
+    name: prod_ect-cdc-consumer
+    workflow: prod_ect-cdc-consumer
+  - dir: account/prod/ect-scheduler
+    name: prod_ect-scheduler
+    workflow: prod_ect-scheduler
+  - dir: account/prod/ect-int
+    name: prod_ect-int
+    workflow: prod_ect-int
+
+################ Preprod Account dir workflow ##########
+#Needs to be enabled when this stack is deployed/resource imported
+  - dir: account/preprod/core_infra/google_project_service
+    name: preprod_core_infra_google_project_service
+    workflow: preprod_core_infra_google_project_service
+  - dir: account/preprod/core_infra/vpc
+    name: preprod_core_infra_vpc
+    workflow: preprod_core_infra_vpc
+  - dir: account/preprod/core_infra/subnets
+    name: preprod_core_infra_subnets
+    workflow: preprod_core_infra_subnets
+  - dir: account/preprod/core_infra/cloudnat
+    name: preprod_core_infra_cloudnat
+    workflow: preprod_core_infra_cloudnat
+  - dir: account/preprod/core_infra/pvt_svc_connection
+    name: preprod_core_infra_pvt_svc_connection
+    workflow: preprod_core_infra_pvt_svc_connection
+  - dir: account/preprod/core_infra/firewall_policy
+    name: preprod_core_infra_firewall_policy
+    workflow: preprod_core_infra_firewall_policy
+  - dir: account/preprod/core_infra/kms
+    name: preprod_core_infra_kms
+    workflow: preprod_core_infra_kms
+  - dir: account/preprod/core_infra/gke_cluster
+    name: preprod_core_infra_gke_cluster
+    workflow: preprod_core_infra_gke_cluster
+  - dir: account/preprod/core_infra/gke_node_pools
+    name: preprod_core_infra_gke_node_pools
+    workflow: preprod_core_infra_gke_node_pools
+  - dir: account/preprod/core_infra/gcp_managed_sa
+    name: preprod_core_infra_gcp_managed_sa
+    workflow: preprod_core_infra_gcp_managed_sa
+  - dir: account/preprod/core_infra/sa/gke
+    name: preprod_core_infra_sa_gke
+    workflow: preprod_core_infra_sa_gke
+  - dir: account/preprod/core_infra/istio_pub_lb
+    name: preprod_core_infra_istio_pub_lb
+    workflow: preprod_core_infra_istio_pub_lb
+  - dir: account/preprod/core_infra/istio_pvt_lb
+    name: preprod_core_infra_istio_pvt_lb
+    workflow: preprod_core_infra_istio_pvt_lb
+  - dir: account/preprod/core_infra/vpn/gcp_preprod_aws/gateway
+    name: preprod_core_infra_vpn_gcp_preprod_aws_gateway
+    workflow: preprod_core_infra_vpn_gcp_preprod_aws_gateway
+  - dir: account/preprod/core_infra/vpn/gcp_preprod_aws/tunnel_peer_gateway
+    name: preprod_core_infra_vpn_gcp_preprod_aws_tunnel_peer_gateway
+    workflow: preprod_core_infra_vpn_gcp_preprod_aws_tunnel_peer_gateway
+  - dir: account/preprod/loki
+    name: preprod_loki
+    workflow: preprod_loki
+  - dir: account/preprod/mimir
+    name: preprod_mimir
+    workflow: preprod_mimir
+  - dir: account/preprod/prometheus
+    name: preprod_prometheus
+    workflow: preprod_prometheus
+  - dir: account/preprod/vault_common_role
+    name: preprod_vault_common_role
+    workflow: preprod_vault_common_role
+  - dir: account/preprod/ectapi
+    name: preprod_ectapi
+    workflow: preprod_ectapi
+  - dir: account/preprod/jaguarapi
+    name: preprod_jaguarapi
+    workflow: preprod_jaguarapi
+  - dir: account/preprod/arsenalapi
+    name: preprod_arsenalapi
+    workflow: preprod_arsenalapi
+  - dir: account/preprod/auditapi
+    name: preprod_auditapi
+    workflow: preprod_auditapi
+  - dir: account/preprod/quadra-int
+    name: preprod_quadra-int
+    workflow: preprod_quadra-int
+  - dir: account/preprod/arsenal-int
+    name: preprod_arsenal-int
+    workflow: preprod_arsenal-int
+  - dir: account/preprod/auxiliaryapi
+    name: preprod_auxiliaryapi
+    workflow: preprod_auxiliaryapi
+  - dir: account/preprod/cibil-change-consumer
+    name: preprod_cibil-change-consumer
+    workflow: preprod_cibil-change-consumer
+  - dir: account/preprod/enach-int
+    name: preprod_enach-int
+    workflow: preprod_enach-int
+  - dir: account/preprod/enach-scheduler
+    name: preprod_enach-scheduler
+    workflow: preprod_enach-scheduler
+  - dir: account/preprod/enach-consumer
+    name: preprod_enach-consumer
+    workflow: preprod_enach-consumer
+  - dir: account/preprod/enachapi
+    name: preprod_enachapi
+    workflow: preprod_enachapi
+  - dir: account/preprod/kycapi
+    name: preprod_kycapi
+    workflow: preprod_kycapi
+  - dir: account/preprod/kyc-int
+    name: preprod_kyc-int
+    workflow: preprod_kyc-int
+  - dir: account/preprod/kyc-scheduler
+    name: preprod_kyc-scheduler
+    workflow: preprod_kyc-scheduler
+  - dir: account/preprod/kyc-consumer
+    name: preprod_kyc-consumer
+    workflow: preprod_kyc-consumer
+  - dir: account/preprod/cn-kyc-consumer
+    name: preprod_cn-kyc-consumer
+    workflow: preprod_cn-kyc-consumer
+  - dir: account/preprod/digitalsignapi
+    name: preprod_digitalsignapi
+    workflow: preprod_digitalsignapi
+  - dir: account/preprod/fiservice-int
+    name: preprod_fiservice-int
+    workflow: preprod_fiservice-int
+  - dir: account/preprod/fiserviceapi
+    name: preprod_fiserviceapi
+    workflow: preprod_fiserviceapi
+  - dir: account/preprod/cn-scheduler
+    name: preprod_cn-scheduler
+    workflow: preprod_cn-scheduler
+  - dir: account/preprod/cn-cis-lfl-consumer
+    name: preprod_cn-cis-lfl-consumer
+    workflow: preprod_cn-cis-lfl-consumer
+  - dir: account/preprod/rmsapi
+    name: preprod_rmsapi
+    workflow: preprod_rmsapi
+  - dir: account/preprod/collect10api
+    name: preprod_collect10api
+    workflow: preprod_collect10api
+  - dir: account/preprod/tnc-consumer
+    name: preprod_tnc-consumer
+    workflow: preprod_tnc-consumer
+  - dir: account/preprod/ad-cdc-consumer
+    name: preprod_ad-cdc-consumer
+    workflow: preprod_ad-cdc-consumer
+  - dir: account/preprod/ect-cdc-consumer
+    name: preprod_ect-cdc-consumer
+    workflow: preprod_ect-cdc-consumer
+  - dir: account/preprod/ect-scheduler
+    name: preprod_ect-scheduler
+    workflow: preprod_ect-scheduler
+  - dir: account/preprod/ect-int
+    name: preprod_ect-int
+    workflow: preprod_ect-int
+  ################# QA Account dir workflow ##########
+#Needs to be enabled when this stack is deployed/resource imported
+#  - dir: account/qa/core_infra/google_project
+#    name: qa_core_infra_google_project
+#    workflow: qa_core_infra_google_project
+  - dir: account/qa/core_infra/google_project_service
+    name: qa_core_infra_google_project_service
+    workflow: qa_core_infra_google_project_service
+  - dir: account/qa/core_infra/vpc
+    name: qa_core_infra_vpc
+    workflow: qa_core_infra_vpc
+  - dir: account/qa/core_infra/subnets
+    name: qa_core_infra_subnets
+    workflow: qa_core_infra_subnets
+  - dir: account/qa/core_infra/cloudnat
+    name: qa_core_infra_cloudnat
+    workflow: qa_core_infra_cloudnat
+  - dir: account/qa/core_infra/kms
+    name: qa_core_infra_kms
+    workflow: qa_core_infra_kms
+  - dir: account/qa/core_infra/gke_cluster
+    name: qa_core_infra_gke_cluster
+    workflow: qa_core_infra_gke_cluster
+  - dir: account/qa/core_infra/gke_node_pools
+    name: qa_core_infra_gke_node_pools
+    workflow: qa_core_infra_gke_node_pools
+  - dir: account/qa/core_infra/gcp_managed_sa
+    name: qa_core_infra_gcp_managed_sa
+    workflow: qa_core_infra_gcp_managed_sa
+  - dir: account/qa/core_infra/sa/gke
+    name: qa_core_infra_sa_gke
+    workflow: qa_core_infra_sa_gke
+  - dir: account/qa/core_infra/firewall_policy
+    name: qa_core_infra_firewall_policy
+    workflow: qa_core_infra_firewall_policy
+  - dir: account/qa/core_infra/pvt_svc_connection
+    name: qa_core_infra_pvt_svc_connection
+    workflow: qa_core_infra_pvt_svc_connection
+  - dir: account/qa/core_infra/istio_pvt_lb
+    name: qa_core_infra_istio_pvt_lb
+    workflow: qa_core_infra_istio_pvt_lb
+  - dir: account/qa/prometheus
+    name: qa_prometheus
+    workflow: qa_prometheus
+  - dir: account/qa/loki
+    name: qa_loki
+    workflow: qa_loki
+  - dir: account/qa/mimir
+    name: qa_mimir
+    workflow: qa_mimir
+  - dir: account/qa/kiali
+    name: qa_kiali
+    workflow: qa_kiali
+  - dir: account/qa/grafana
+    name: qa_grafana
+    workflow: qa_grafana
+  - dir: account/qa/vault_common_role
+    name: qa_vault_common_role
+    workflow: qa_vault_common_role
+  - dir: account/qa/digitalsignapi
+    name: qa_digitalsignapi
+    workflow: qa_digitalsignapi
+  - dir: account/qa/jaguarapi
+    name: qa_jaguarapi
+    workflow: qa_jaguarapi
+  - dir: account/qa/arsenal-int
+    name: qa_arsenal-int
+    workflow: qa_arsenal-int
+  - dir: account/qa/fiservice-int
+    name: qa_fiservice-int
+    workflow: qa_fiservice-int
+  - dir: account/qa/fiserviceapi
+    name: qa_fiserviceapi
+    workflow: qa_fiserviceapi
+  - dir: account/qa/ectapi
+    name: qa_ectapi
+    workflow: qa_ectapi
+  - dir: account/qa/arsenalapi
+    name: qa_arsenalapi
+    workflow: qa_arsenalapi
+  - dir: account/qa/auditapi
+    name: qa_auditapi
+    workflow: qa_auditapi
+  - dir: account/qa/quadra-int
+    name: qa_quadra-int
+    workflow: qa_quadra-int
+  - dir: account/qa/cn-cis-lfl-consumer
+    name: qa_cn-cis-lfl-consumer
+    workflow: qa_cn-cis-lfl-consumer
+  - dir: account/qa/enach-int
+    name: qa_enach-int
+    workflow: qa_enach-int
+  - dir: account/qa/enach-scheduler
+    name: qa_enach-scheduler
+    workflow: qa_enach-scheduler
+  - dir: account/qa/enach-consumer
+    name: qa_enach-consumer
+    workflow: qa_enach-consumer
+  - dir: account/qa/enachapi
+    name: qa_enachapi
+    workflow: qa_enachapi
+  - dir: account/qa/kyc-int
+    name: qa_kyc-int
+    workflow: qa_kyc-int
+  - dir: account/qa/kyc-consumer
+    name: qa_kyc-consumer
+    workflow: qa_kyc-consumer
+  - dir: account/qa/kycapi
+    name: qa_kycapi
+    workflow: qa_kycapi
+  - dir: account/qa/kyc-scheduler
+    name: qa_kyc-scheduler
+    workflow: qa_kyc-scheduler
+  - dir: account/qa/auxiliaryapi
+    name: qa_auxiliaryapi
+    workflow: qa_auxiliaryapi
+  - dir: account/qa/cibil-change-consumer
+    name: qa_cibil-change-consumer
+    workflow: qa_cibil-change-consumer
+  - dir: account/qa/collect10api
+    name: qa_collect10api
+    workflow: qa_collect10api
+  - dir: account/qa/cn-scheduler
+    name: qa_cn-scheduler
+    workflow: qa_cn-scheduler
+  - dir: account/qa/rmsapi
+    name: qa_rmsapi
+    workflow: qa_rmsapi
+  - dir: account/qa/cn-kyc-consumer
+    name: qa_cn-kyc-consumer
+    workflow: qa_cn-kyc-consumer
+  - dir: account/qa/lgnd-schedular
+    name: qa_lgnd-schedular
+    workflow: qa_lgnd-schedular
+  - dir: account/qa/tnc-consumer
+    name: qa_tnc-consumer
+    workflow: qa_tnc-consumer
+  - dir: account/qa/ad-cdc-consumer
+    name: qa_ad-cdc-consumer
+    workflow: qa_ad-cdc-consumer
+  - dir: account/qa/ect-cdc-consumer
+    name: qa_ect-cdc-consumer
+    workflow: qa_ect-cdc-consumer
+  - dir: account/qa/ect-scheduler
+    name: qa_ect-scheduler
+    workflow: qa_ect-scheduler
+  - dir: account/qa/ect-int
+    name: qa_ect-int
+    workflow: qa_ect-int
+  - dir: account/qa/core_infra/vpn/gcp_qa_aws/gateway
+    name: qa_core_infra_vpn_gcp_qa_aws_gateway
+    workflow: qa_core_infra_vpn_gcp_qa_aws_gateway
+  - dir: account/qa/core_infra/vpn/gcp_qa_aws/tunnel_peer_gateway
+    name: qa_core_infra_vpn_gcp_qa_aws_tunnel_peer_gateway
+    workflow: qa_core_infra_vpn_gcp_qa_aws_tunnel_peer_gateway
+
+################# DEV Account dir workflow ##########
+  - dir: account/dev/core_infra/vpc
+    name: dev_core_infra_vpc
+    workflow: dev_core_infra_vpc
+  - dir: account/dev/core_infra/subnets
+    name: dev_core_infra_subnets
+    workflow: dev_core_infra_subnets
+  - dir: account/dev/core_infra/cloudnat
+    name: dev_core_infra_cloudnat
+    workflow: dev_core_infra_cloudnat
+  - dir: account/dev/core_infra/kms
+    name: dev_core_infra_kms
+    workflow: dev_core_infra_kms
+  - dir: account/dev/core_infra/gke_cluster
+    name: dev_core_infra_gke_cluster
+    workflow: dev_core_infra_gke_cluster
+  - dir: account/dev/core_infra/gke_node_pools
+    name: dev_core_infra_gke_node_pools
+    workflow: dev_core_infra_gke_node_pools
+  - dir: account/dev/core_infra/gke_bkp_plan
+    name: dev_core_infra_gke_bkp_plan
+    workflow: dev_core_infra_gke_bkp_plan
+  # - dir: account/dev/core_infra/gke_restore_plan
+  #   name: dev_core_infra_gke_restore_plan
+  #   workflow: dev_core_infra_gke_restore_plan
+  - dir: account/dev/core_infra/gcp_managed_sa
+    name: dev_core_infra_gcp_managed_sa
+    workflow: dev_core_infra_gcp_managed_sa
+  - dir: account/dev/core_infra/sa/gke
+    name: dev_core_infra_sa_gke
+    workflow: dev_core_infra_sa_gke
+  - dir: account/dev/core_infra/firewall_policy
+    name: dev_core_infra_firewall_policy
+    workflow: dev_core_infra_firewall_policy
+  - dir: account/dev/core_infra/istio_pvt_lb
+    name: dev_core_infra_istio_pvt_lb
+    workflow: dev_core_infra_istio_pvt_lb
+  - dir: account/dev/core_infra/vpn/gcp_dev_aws_qa/gateway
+    name: dev_core_infra_vpn_gcp_dev_aws_qa_gateway
+    workflow: dev_core_infra_vpn_gcp_dev_aws_qa_gateway
+  - dir: account/dev/core_infra/vpn/gcp_dev_aws_qa/tunnel_peer_gateway
+    name: dev_core_infra_vpn_gcp_dev_aws_qa_tunnel_peer_gateway
+    workflow: dev_core_infra_vpn_gcp_dev_aws_qa_tunnel_peer_gateway
+  - dir: account/dev/core_infra/pvt_svc_connection
+    name: dev_core_infra_pvt_svc_connection
+    workflow: dev_core_infra_pvt_svc_connection
+  - dir: account/dev/prometheus
+    name: dev_prometheus
+    workflow: dev_prometheus
+  - dir: account/dev/loki
+    name: dev_loki
+    workflow: dev_loki
+  - dir: account/dev/mimir
+    name: dev_mimir
+    workflow: dev_mimir
+  - dir: account/dev/jenkins
+    name: dev_jenkins
+    workflow: dev_jenkins
+  - dir: account/dev/core_infra/vpn/gcp_blr_onprem_airtel_as1_01
+    name: dev_core_infra_vpn_gcp_blr_onprem_airtel_as1_01
+    workflow: dev_core_infra_vpn_gcp_blr_onprem_airtel_as1_01
+  - dir: account/dev/core_infra/vpn/gcp_blr_onprem_tata_as1_01
+    name: dev_core_infra_vpn_gcp_blr_onprem_tata_as1_01
+    workflow: dev_core_infra_vpn_gcp_blr_onprem_tata_as1_01
+  - dir: account/dev/core_infra/cloudsql/mysql/db_01
+    name: dev_core_infra_cloudsql_mysql_db_01
+    workflow: dev_core_infra_cloudsql_mysql_db_01
+  - dir: account/dev/kiali
+    name: dev_kiali
+    workflow: dev_kiali
+  - dir: account/dev/grafana
+    name: dev_grafana
+    workflow: dev_grafana
+  - dir: account/dev/vault_common_role
+    name: dev_vault_common_role
+    workflow: dev_vault_common_role
+  - dir: account/dev/fiserviceapi
+    name: dev_fiserviceapi
+    workflow: dev_fiserviceapi
+  - dir: account/dev/fiservice-int
+    name: dev_fiservice-int
+    workflow: dev_fiservice-int
+  - dir: account/dev/crypto
+    name: dev_crypto
+    workflow: dev_crypto
+  - dir: account/dev/core_infra/dataproc
+    name: dev_core_infra_dataproc
+    workflow: dev_core_infra_dataproc
+  - dir: account/dev/jaguarapi
+    name: dev_jaguarapi
+    workflow: dev_jaguarapi
+  - dir: account/dev/cn-kyc-consumer
+    name: dev_cn-kyc-consumer
+    workflow: dev_cn-kyc-consumer
+  - dir: account/dev/arsenalapi
+    name: dev_arsenalapi
+    workflow: dev_arsenalapi
+  - dir: account/dev/arsenal-int
+    name: dev_arsenal-int
+    workflow: dev_arsenal-int
+  - dir: account/dev/digitalsignapi
+    name: dev_digitalsignapi
+    workflow: dev_digitalsignapi
+  - dir: account/dev/auditapi
+    name: dev_auditapi
+    workflow: dev_auditapi
+  - dir: account/dev/ectapi
+    name: dev_ectapi
+    workflow: dev_ectapi
+  - dir: account/dev/tnc-consumer
+    name: dev_tnc-consumer
+    workflow: dev_tnc-consumer
+  - dir: account/dev/quadra-int
+    name: dev_quadra-int
+    workflow: dev_quadra-int
+  - dir: account/dev/auxiliaryapi
+    name: dev_auxiliaryapi
+    workflow: dev_auxiliaryapi
+  - dir: account/dev/rmsapi
+    name: dev_rmsapi
+    workflow: dev_rmsapi
+  - dir: account/dev/cn-scheduler
+    name: dev_cn-scheduler
+    workflow: dev_cn-scheduler
+  - dir: account/dev/ravenapi
+    name: dev_ravenapi
+    workflow: dev_ravenapi
+  - dir: account/dev/cn-cis-lfl-consumer
+    name: dev_cn-cis-lfl-consumer
+    workflow: dev_cn-cis-lfl-consumer
+  - dir: account/dev/cibil-change-consumer
+    name: dev_cibil-change-consumer
+    workflow: dev_cibil-change-consumer
+  - dir: account/dev/datalake
+    name: dev_datalake
+    workflow: dev_datalake
+  - dir: account/dev/collect10api
+    name: dev_collect10api
+    workflow: dev_collect10api
+  - dir: account/dev/enach-int
+    name: dev_enach-int
+    workflow: dev_enach-int
+  - dir: account/dev/enach-scheduler
+    name: dev_enach-scheduler
+    workflow: dev_enach-scheduler
+  - dir: account/dev/enach-consumer
+    name: dev_enach-consumer
+    workflow: dev_enach-consumer
+  - dir: account/dev/enachapi
+    name: dev_enachapi
+    workflow: dev_enachapi
+  - dir: account/dev/kyc-int
+    name: dev_kyc-int
+    workflow: dev_kyc-int
+  - dir: account/dev/kyc-consumer
+    name: dev_kyc-consumer
+    workflow: dev_kyc-consumer
+  - dir: account/dev/kycapi
+    name: dev_kycapi
+    workflow: dev_kycapi
+  - dir: account/dev/kyc-scheduler
+    name: dev_kyc-scheduler
+    workflow: dev_kyc-scheduler
+  - dir: account/dev/lgnd-schedular
+    name: dev_lgnd-schedular
+    workflow: dev_lgnd-schedular
+  - dir: account/dev/ad-cdc-consumer
+    name: dev_ad-cdc-consumer
+    workflow: dev_ad-cdc-consumer
+  - dir: account/dev/ect-cdc-consumer
+    name: dev_ect-cdc-consumer
+    workflow: dev_ect-cdc-consumer
+  - dir: account/dev/ect-scheduler
+    name: dev_ect-scheduler
+    workflow: dev_ect-scheduler
+  - dir: account/dev/ect-int
+    name: dev_ect-int
+    workflow: dev_ect-int
+  - dir: account/dev/datalake_hive_trino
+    name: dev_datalake_hive_trino
+    workflow: dev_datalake_hive_trino 
+  - dir: account/dev/trino
+    name: dev_trino
+    workflow: dev_trino
+
+  ################# Mgmt Account dir workflow ##########
+  - dir: account/mgmt/core_infra/vpc
+    name: mgmt_core_infra_vpc
+    workflow: mgmt_core_infra_vpc
+  - dir: account/mgmt/core_infra/subnets
+    name: mgmt_core_infra_subnets
+    workflow: mgmt_core_infra_subnets
+  - dir: account/mgmt/core_infra/cloudnat
+    name: mgmt_core_infra_cloudnat
+    workflow: mgmt_core_infra_cloudnat
+  - dir: account/mgmt/core_infra/kms
+    name: mgmt_core_infra_kms
+    workflow: mgmt_core_infra_kms
+  - dir: account/mgmt/core_infra/sa/gke
+    name: mgmt_core_infra_sa_gke
+    workflow: mgmt_core_infra_sa_gke
+  - dir: account/mgmt/core_infra/gcs/terraform
+    name: mgmt_core_infra_gcs_terraform
+    workflow: mgmt_core_infra_gcs_terraform
+  - dir: account/mgmt/core_infra/gke
+    name: mgmt_core_infra_gke
+    workflow: mgmt_core_infra_gke
+  - dir: account/mgmt/core_infra/gke_node_pools
+    name: mgmt_core_infra_gke_node_pools
+    workflow: mgmt_core_infra_gke_node_pools
+  - dir: account/mgmt/core_infra/gke_bkp_plan
+    name: mgmt_core_infra_gke_bkp_plan
+    workflow: mgmt_core_infra_gke_bkp_plan
+  - dir: account/mgmt/core_infra/gke_restore_plan
+    name: mgmt_core_infra_gke_restore_plan
+    workflow: mgmt_core_infra_gke_restore_plan
+  - dir: account/mgmt/core_infra/firewall_policy
+    name: mgmt_core_infra_firewall_policy
+    workflow: mgmt_core_infra_firewall_policy
+  - dir: account/mgmt/core_infra/artifact_registry/docker
+    name: mgmt_core_infra_artifact_registry_docker
+    workflow: mgmt_core_infra_artifact_registry_docker
+  - dir: account/mgmt/core_infra/dns_pub_zone
+    name: mgmt_core_infra_dns_pub_zone
+    workflow: mgmt_core_infra_dns_pub_zone
+  - dir: account/mgmt/core_infra/dns_pvt_zone
+    name: mgmt_core_infra_dns_pvt_zone
+    workflow: mgmt_core_infra_dns_pvt_zone
+  - dir: account/mgmt/core_infra/filestore
+    name: mgmt_core_infra_filestore
+    workflow: mgmt_core_infra_filestore
+  - dir: account/mgmt/core_infra/google_dns_policy
+    name: mgmt_core_infra_google_dns_policy
+    workflow: mgmt_core_infra_google_dns_policy
+  - dir: account/mgmt/core_infra/pvt_svc_connection
+    name: mgmt_core_infra_pvt_svc_connection
+    workflow: mgmt_core_infra_pvt_svc_connection
+  - dir: account/mgmt/core_infra/vpn/gcp_blr_onprem_airtel_as1_01
+    name: mgmt_core_infra_vpn_gcp_blr_onprem_airtel_as1_01
+    workflow: mgmt_core_infra_vpn_gcp_blr_onprem_airtel_as1_01
+  - dir: account/mgmt/core_infra/vpn/gcp_blr_vt_onprem_airtel_as1_125_18_213_46
+    name: mgmt_core_infra_vpn_gcp_blr_vt_onprem_airtel_as1_125_18_213_46
+    workflow: mgmt_core_infra_vpn_gcp_blr_vt_onprem_airtel_as1_125_18_213_46
+  - dir: account/mgmt/core_infra/vpn/gcp_blr_vt_onprem_tata_as1_14_194_72_10
+    name: mgmt_core_infra_vpn_gcp_blr_vt_onprem_tata_as1_14_194_72_10
+    workflow: mgmt_core_infra_vpn_gcp_blr_vt_onprem_tata_as1_14_194_72_10
+  - dir: account/mgmt/core_infra/vpn/gcp_ahm_ibp_onprem_blaznet_as1_103_254_244_178
+    name: mgmt_core_infra_vpn_gcp_ahm_ibp_onprem_blaznet_as1_103_254_244_178
+    workflow: mgmt_core_infra_vpn_gcp_ahm_ibp_onprem_blaznet_as1_103_254_244_178
+  - dir: account/mgmt/core_infra/vpn/gcp_mgmt_aws_prod_01/gateway
+    name: mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_gateway
+    workflow: mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_gateway
+  - dir: account/mgmt/core_infra/vpn/gcp_mgmt_aws_prod_01/tunnel_peer_gateway
+    name: mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_tunnel_peer_gateway
+    workflow: mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_tunnel_peer_gateway
+  - dir: account/mgmt/core_infra/vpn/mgmt_dev_ha_vpn
+    name: mgmt_core_infra_vpn_mgmt_dev_ha_vpn
+    workflow: mgmt_core_infra_vpn_mgmt_dev_ha_vpn
+  - dir: account/mgmt/core_infra/vpn/mgmt_qa_ha_vpn
+    name: mgmt_core_infra_vpn_mgmt_qa_ha_vpn
+    workflow: mgmt_core_infra_vpn_mgmt_qa_ha_vpn
+  - dir: account/mgmt/core_infra/vpn/mgmt_prod_ha_vpn
+    name: mgmt_core_infra_vpn_mgmt_prod_ha_vpn
+    workflow: mgmt_core_infra_vpn_mgmt_prod_ha_vpn
+  - dir: account/mgmt/core_infra/vpn/mgmt_preprod_ha_vpn
+    name: mgmt_core_infra_vpn_mgmt_preprod_ha_vpn
+    workflow: mgmt_core_infra_vpn_mgmt_preprod_ha_vpn
+  - dir: account/mgmt/core_infra/vpn/cloud_router
+    name: mgmt_core_infra_vpn_cloud_router
+    workflow: mgmt_core_infra_vpn_cloud_router
+  - dir: account/mgmt/core_infra/gcp_managed_sa
+    name: mgmt_core_infra_gcp_managed_sa
+    workflow: mgmt_core_infra_gcp_managed_sa
+  - dir: account/mgmt/core_infra/sa/gitlab
+    name: mgmt_core_infra_sa_gitlab
+    workflow: mgmt_core_infra_sa_gitlab
+  - dir: account/mgmt/core_infra/cloudsql/postgres/db_01
+    name: mgmt_core_infra_cloudsql_postgres_db_01
+    workflow: mgmt_core_infra_cloudsql_postgres_db_01
+  - dir: account/mgmt/core_infra/cloudsql/postgres/db_02
+    name: mgmt_core_infra_cloudsql_postgres_db_02
+    workflow: mgmt_core_infra_cloudsql_postgres_db_02
+  - dir: account/mgmt/atlantis
+    name: mgmt_atlantis
+    workflow: mgmt_atlantis
+  - dir: account/mgmt/grafana
+    name: mgmt_grafana
+    workflow: mgmt_grafana
+  - dir: account/mgmt/jenkins
+    name: mgmt_jenkins
+    workflow: mgmt_jenkins
+  - dir: account/mgmt/argocd
+    name: mgmt_argocd
+    workflow: mgmt_argocd
+  - dir: account/mgmt/sonar
+    name: mgmt_sonar
+    workflow: mgmt_sonar
+  - dir: account/mgmt/mimir
+    name: mgmt_mimir
+    workflow: mgmt_mimir
+  - dir: account/mgmt/loki
+    name: mgmt_loki
+    workflow: mgmt_loki
+  - dir: account/mgmt/nexus
+    name: mgmt_nexus
+    workflow: mgmt_nexus
+  - dir: account/mgmt/prometheus
+    name: mgmt_prometheus
+    workflow: mgmt_prometheus
+  - dir: account/mgmt/vault
+    name: mgmt_vault
+    workflow: mgmt_vault
+  - dir: account/mgmt/packer
+    name: mgmt_packer
+    workflow: mgmt_packer
+  - dir: account/mgmt/statuspage
+    name: mgmt_statuspage
+    workflow: mgmt_statuspage
+  - dir: account/mgmt/core_infra/vpc_peering/mgmt_dev
+    name: mgmt_core_infra_vpc_peering_mgmt_dev
+    workflow: mgmt_core_infra_vpc_peering_mgmt_dev
+  - dir: account/mgmt/core_infra/vpc_peering/mgmt_qa
+    name: mgmt_core_infra_vpc_peering_mgmt_qa
+    workflow: mgmt_core_infra_vpc_peering_mgmt_qa
+  - dir: account/mgmt/core_infra/vpc_peering/mgmt_prod
+    name: mgmt_core_infra_vpc_peering_mgmt_prod
+    workflow: mgmt_core_infra_vpc_peering_mgmt_prod
+  - dir: account/mgmt/core_infra/vpc_peering/mgmt_preprod
+    name: mgmt_core_infra_vpc_peering_mgmt_preprod
+    workflow: mgmt_core_infra_vpc_peering_mgmt_preprod
+  - dir: account/mgmt/kiali
+    name: mgmt_kiali
+    workflow: mgmt_kiali
+  - dir: account/mgmt/keycloak
+    name: mgmt_keycloak
+    workflow: mgmt_keycloak
+  - dir: account/mgmt/vault_common_role
+    name: mgmt_vault_common_role
+    workflow: mgmt_vault_common_role
+  
+  ################# Mgmt DR Account dir workflow ##########
+  - dir: account/mgmt/dr_infra/subnets
+    name: mgmt_dr_infra_subnets
+    workflow: mgmt_dr_infra_subnets
+  - dir: account/mgmt/dr_infra/cloudnat
+    name: mgmt_dr_infra_cloudnat
+    workflow: mgmt_dr_infra_cloudnat
+  - dir: account/mgmt/dr_infra/gke
+    name: mgmt_dr_infra_gke
+    workflow: mgmt_dr_infra_gke
+  - dir: account/mgmt/dr_infra/gke_node_pools
+    name: mgmt_dr_infra_gke_node_pools
+    workflow: mgmt_dr_infra_gke_node_pools
+  # - dir: account/mgmt/dr_infra/pvt_svc_connection
+  #   name: mgmt_dr_infra_pvt_svc_connection
+  #   workflow: mgmt_dr_infra_pvt_svc_connection
+
+    ################# Prod DR Account dir workflow ##########
+  - dir: account/prod/dr_infra/subnets
+    name: prod_dr_infra_subnets
+    workflow: prod_dr_infra_subnets
+  - dir: account/prod/dr_infra/cloudnat
+    name: prod_dr_infra_cloudnat
+    workflow: prod_dr_infra_cloudnat
+  - dir: account/prod/dr_infra/gke
+    name: prod_dr_infra_gke
+    workflow: prod_dr_infra_gke
+  - dir: account/prod/dr_infra/gke_node_pools
+    name: prod_dr_infra_gke_node_pools
+    workflow: prod_dr_infra_gke_node_pools
+  # - dir: account/prod/dr_infra/pvt_svc_connection
+  #   name: prod_dr_infra_pvt_svc_connection
+  #   workflow: prod_dr_infra_pvt_svc_connection
+
+    ################# Security Account dir workflow ##########
+  - dir: account/security/core_infra/kms
+    name: sec_infra_kms
+    workflow: sec_infra_kms
+  - dir: account/security/core_infra/google_project_service
+    name: sec_core_infra_google_project_service
+    workflow: sec_core_infra_google_project_service
+  - dir: account/security/logging
+    name: sec_logging_gcs
+    workflow: sec_logging_gcs
+  - dir: account/security/core_infra/gcp_managed_sa
+    name: sec_core_infra_gcp_managed_sa
+    workflow: sec_core_infra_gcp_managed_sa
+
+version: 3
+workflows:
+################ Prod Account workflows ##################
+#Needs to be enabled when this stack is deployed/resource imported
+#  prod_core_infra_google_project:
+#    plan:
+#      steps:
+#        - init
+#        - plan:
+#            extra_args:
+#              - "-var-file=../../../tfvars/prod.tfvars"
+#    apply:
+#      steps:
+#        - apply
+  prod_core_infra_google_project_service:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_vpc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_subnets:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_firewall_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_kms:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_gke_cluster:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_sa_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_istio_pub_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_istio_pvt_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_gke_bkp_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_gke_restore_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_vpn_gcp_prod_aws_prod_01_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_vpn_gcp_prod_aws_prod_01_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_vpn_gcp_prod_aws_prod_02_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_core_infra_vpn_gcp_prod_aws_prod_02_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_dr_infra_subnets:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_dr_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_dr_infra_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_dr_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_dr_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_vault_common_role:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_loki:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_prometheus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_mimir:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_cn-kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_digitalsignapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_fiserviceapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_fiservice-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_arsenal-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_cibil-change-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_jaguarapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_arsenalapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_ectapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_auditapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_quadra-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_enach-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_enach-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_enach-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_enachapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_kycapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_kyc-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_kyc-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_cn-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_cn-cis-lfl-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_rmsapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_collect10api:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_lgnd-schedular:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_auxiliaryapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_ad-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_tnc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_ect-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_ect-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+  prod_ect-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/prod.tfvars"
+    apply:
+      steps:
+        - apply
+
+################ Preprod Account workflows ##################
+#Needs to be enabled when this stack is deployed/resource imported
+  preprod_core_infra_google_project_service:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_vpc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_subnets:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_firewall_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_kms:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_gke_cluster:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_sa_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_istio_pub_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_istio_pvt_lb:
+      plan:
+        steps:
+          - init
+          - plan:
+              extra_args:
+                - "-var-file=../../../tfvars/preprod.tfvars"
+      apply:
+        steps:
+          - apply
+  preprod_core_infra_vpn_gcp_preprod_aws_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_core_infra_vpn_gcp_preprod_aws_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_loki:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_prometheus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_mimir:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_vault_common_role:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_jaguarapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_arsenalapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_ectapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_auditapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_quadra-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_arsenal-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_auxiliaryapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_cibil-change-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_enach-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_enach-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_enach-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_enachapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_kycapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_kyc-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_kyc-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_cn-kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_digitalsignapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_fiserviceapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_fiservice-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_collect10api:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_rmsapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_cn-cis-lfl-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_cn-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_lgnd-schedular:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_ad-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_tnc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_ect-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_ect-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+  preprod_ect-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/preprod.tfvars"
+    apply:
+      steps:
+        - apply
+
+################ QA Account workflows ##################
+#Needs to be enabled when this stack is deployed/resource imported
+#  qa_core_infra_google_project:
+#    plan:
+#      steps:
+#        - init
+#        - plan:
+#            extra_args:
+#              - "-var-file=../../../tfvars/qa.tfvars"
+#    apply:
+#      steps:
+#        - apply
+  qa_core_infra_google_project_service:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_vpc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_subnets:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_kms:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_gke_cluster:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_gke_bkp_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_sa_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_firewall_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_istio_pvt_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_prometheus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_mimir:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_loki:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_kiali:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_grafana:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  
+  qa_vault_common_role:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+        
+  qa_digitalsignapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_jaguarapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_arsenal-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_fiservice-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_fiserviceapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_arsenalapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_auditapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_ectapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_quadra-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_vpn_gcp_qa_aws_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_core_infra_vpn_gcp_qa_aws_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_cn-cis-lfl-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_enach-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_enach-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_enach-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_enachapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_kyc-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_kycapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_kyc-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_cibil-change-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_auxiliaryapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_collect10api:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_cn-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_rmsapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_cn-kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_lgnd-schedular:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_ad-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_tnc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_ect-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_ect-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+  qa_ect-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/qa.tfvars"
+    apply:
+      steps:
+        - apply
+
+################ DEV Account workflows ##################
+  dev_core_infra_vpc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_subnets:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_kms:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_gke_cluster:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_gke_bkp_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_gke_restore_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_sa_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_sa_vm:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_firewall_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_istio_pvt_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_vpn_gcp_dev_aws_qa_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_vpn_gcp_dev_aws_qa_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_prometheus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_mimir:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_loki:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_jenkins:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_vpn_gcp_blr_onprem_airtel_as1_01:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_vpn_gcp_blr_onprem_tata_as1_01:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_kiali:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_grafana:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_vault_common_role:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_fiserviceapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_fiservice-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_crypto:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_dataproc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_jaguarapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_cn-kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_arsenalapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_arsenal-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_digitalsignapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_auditapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_tnc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ectapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_quadra-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_auxiliaryapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_cn-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_rmsapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ravenapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_cn-cis-lfl-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_datalake:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_core_infra_cloudsql_mysql_db_01:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_collect10api:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_cibil-change-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_enach-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_enach-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_enach-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_enachapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_kyc-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_kyc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_kycapi:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_kyc-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_lgnd-schedular:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ad-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ect-cdc-consumer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ect-scheduler:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_ect-int:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply
+  dev_datalake_hive_trino:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+    apply:
+      steps:
+        - apply      
+  dev_trino:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev.tfvars"
+
+  ####################### Mgmt Account workflows ##################
+  mgmt_core_infra_vpc:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_subnets:
+      plan:
+        steps:
+          - init
+          - plan:
+              extra_args:
+                - "-var-file=../../../tfvars/mgmt.tfvars"
+      apply:
+        steps:
+          - apply
+  mgmt_core_infra_cloudnat:
+      plan:
+        steps:
+          - init
+          - plan:
+              extra_args:
+                - "-var-file=../../../tfvars/mgmt.tfvars"
+      apply:
+        steps:
+          - apply
+  mgmt_core_infra_kms:
+      plan:
+        steps:
+          - init
+          - plan:
+              extra_args:
+                - "-var-file=../../../tfvars/mgmt.tfvars"
+      apply:
+        steps:
+          - apply
+  mgmt_core_infra_sa_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gcs_terraform:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gke_bkp_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gke_restore_plan:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_firewall_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_filestore:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_dns_pub_zone:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_dns_pvt_zone:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_google_dns_policy:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_blr_onprem_airtel_as1_01:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_blr_vt_onprem_tata_as1_14_194_72_10:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_blr_vt_onprem_airtel_as1_125_18_213_46:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_ahm_ibp_onprem_blaznet_as1_103_254_244_178:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_gcp_mgmt_aws_prod_01_tunnel_peer_gateway:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_artifact_registry_docker:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_atlantis:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_statuspage:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_sa_gitlab:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_mgmt_dev_ha_vpn:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_mgmt_qa_ha_vpn:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_mgmt_prod_ha_vpn:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_mgmt_preprod_ha_vpn:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpn_cloud_router:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_istio_pub_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_istio_pvt_lb:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_grafana:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_cloudsql_postgres_db_01:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_cloudsql_postgres_db_02:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_jenkins:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_sonar:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_nexus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_mimir:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_loki:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_argocd:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_prometheus:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_vault:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_packer:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpc_peering_mgmt_dev:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpc_peering_mgmt_qa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpc_peering_mgmt_prod:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_core_infra_vpc_peering_mgmt_preprod:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_kiali:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_keycloak:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_vault_common_role:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  
+  ######################## Mgmt DR Account workflows ##################
+  mgmt_dr_infra_subnets:
+      plan:
+        steps:
+          - init
+          - plan:
+              extra_args:
+                - "-var-file=../../../tfvars/dr_mgmt.tfvars"
+  mgmt_dr_infra_cloudnat:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_dr_infra_gke:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_dr_infra_gke_node_pools:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+  mgmt_dr_infra_pvt_svc_connection:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/dr_mgmt.tfvars"
+    apply:
+      steps:
+        - apply
+
+################ Security Account workflows ##################
+  sec_infra_kms:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/security.tfvars"
+    apply:
+      steps:
+        - apply
+
+  sec_core_infra_google_project_service:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/security.tfvars"
+    apply:
+      steps:
+        - apply
+
+  sec_logging_gcs:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/security.tfvars"
+    apply:
+      steps:
+        - apply
+  
+  sec_core_infra_gcp_managed_sa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../../tfvars/security.tfvars"
+    apply:
+      steps:
+        - apply
